@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { services } from './lib/services'
+import BokaButton from './components/BokaButton'
 
 function useReveal(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
@@ -123,6 +124,9 @@ export default function Home() {
             <p className="font-display hero-tagline">
               PROFESSIONELL<br />REKOND
             </p>
+            <BokaButton className="hero-mobile-cta">
+              Boka rekond →
+            </BokaButton>
           </div>
           <div className="hero-bottom-right">
             <p className="hero-scroll-hint">Scrolla ned</p>
