@@ -88,7 +88,7 @@ export default function Footer() {
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{
             fontFamily: "var(--font-body), 'Outfit', sans-serif",
-            fontSize: '0.55rem',
+            fontSize: '0.78rem',
             fontWeight: 500,
             letterSpacing: '0.26em',
             textTransform: 'uppercase',
