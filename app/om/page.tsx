@@ -43,7 +43,7 @@ export default function OmMig() {
 
           <div className="about-photo-wrap reveal">
             <Image
-              src="/om-mig.png"
+              src="/om-mig.jpg"
               alt="Emilia Lindmark, grundare Fireshine Recond"
               fill
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
