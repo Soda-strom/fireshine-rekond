@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import BokaButton from './BokaButton'
 
 const links = [
   { href: '/#tjanster',  label: 'Tjänster'             },
@@ -97,9 +98,9 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTA */}
-        <Link href="/boka" className={`nav-desktop btn-primary`}>
+        <BokaButton className="nav-desktop btn-primary">
           Boka tid
-        </Link>
+        </BokaButton>
 
         {/* Mobile hamburger */}
         <button
@@ -169,14 +170,13 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              href="/boka"
+            <BokaButton
               className="btn-primary"
+              style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center', width: '100%' }}
               onClick={() => setMenuOpen(false)}
-              style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center' }}
             >
               Boka tid
-            </Link>
+            </BokaButton>
           </div>
         </div>
       )}

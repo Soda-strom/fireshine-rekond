@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import BokaButton from './BokaButton'
 
 function InstagramIcon() {
   return (
@@ -77,7 +78,6 @@ const navLinks = [
   { label: 'Om mig',               href: '/om'          },
   { label: 'Lackstift erbjudande', href: '/lackstift'   },
   { label: 'Resultat',             href: '/om#resultat' },
-  { label: 'Boka',                 href: '/boka'        },
 ]
 
 export default function Footer() {
@@ -342,8 +342,7 @@ export default function Footer() {
             >
               fireshine_recond@hotmail.com
             </a>
-            <Link
-              href="/boka"
+            <BokaButton
               className="btn-primary"
               style={{
                 fontSize: '0.65rem',
@@ -353,7 +352,7 @@ export default function Footer() {
               }}
             >
               Boka tid →
-            </Link>
+            </BokaButton>
           </div>
         </div>
 
