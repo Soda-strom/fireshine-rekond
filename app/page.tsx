@@ -1,16 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { useEffect, useRef } from 'react'
-import GalleryCarousel from './components/GalleryCarousel'
-
-const services = [
-  { num: '01', title: 'Polering',        sub: 'Maskinpolering · repor · lack' },
-  { num: '02', title: 'Lackskydd',       sub: 'Keramisk coating · UV-skydd · hydrofob' },
-  { num: '03', title: 'Invändig Rekond', sub: 'Djuprengöring · klädsel · mattor' },
-  { num: '04', title: 'Utvändig Rekond', sub: 'Tvätt · avfettning · finish' },
-  { num: '05', title: 'Helrekond',       sub: 'In & ut · showroom-skick · garanti' },
-]
+import Link from 'next/link'
+import { services } from './lib/services'
 
 function useReveal(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
@@ -33,13 +25,9 @@ export default function Home() {
   const heroRef      = useRef<HTMLDivElement>(null)
   const videoRef     = useRef<HTMLVideoElement>(null)
   const blurVideoRef = useRef<HTMLVideoElement>(null)
-  const statementRef = useRef<HTMLElement>(null)
   const servicesRef  = useRef<HTMLElement>(null)
-  const ctaRef       = useRef<HTMLElement>(null)
 
-  useReveal(statementRef)
   useReveal(servicesRef)
-  useReveal(ctaRef)
 
   useEffect(() => {
     const sharp = videoRef.current
@@ -126,7 +114,6 @@ export default function Home() {
 
         <div className="hero-noise" />
 
-        {/* Bottom bar */}
         <div ref={heroRef} className="hero-bottom-bar">
           <div>
             <div className="hero-location">
@@ -150,9 +137,9 @@ export default function Home() {
           <p className="section-label reveal">Tjänster</p>
         </div>
         {services.map((s, i) => (
-          <a
-            key={s.num}
-            href="/boka"
+          <Link
+            key={s.slug}
+            href={`/tjanster/${s.slug}`}
             className={`service-line reveal reveal-delay-${(i % 3) + 1}`}
           >
             <span className="service-line-num font-display">{s.num}</span>
@@ -161,108 +148,9 @@ export default function Home() {
               <span className="service-line-price-hint">Se pris →</span>
             </span>
             <span className="service-line-sub">{s.sub}</span>
-            <span className="service-line-arrow">Boka →</span>
-          </a>
+            <span className="service-line-arrow">Se mer →</span>
+          </Link>
         ))}
-      </section>
-
-      {/* ── SAMARBETE BILFÄRG.SE ── */}
-      <section className="partner-section" id="lackstift">
-        <div className="partner-split">
-
-          {/* Bild */}
-          <div className="partner-photo-wrap">
-            <Image
-              src="/samarbete.png"
-              alt="Samarbete med bilfärg.se"
-              fill
-              unoptimized
-              style={{ objectFit: 'cover', objectPosition: 'center top' }}
-              sizes="(max-width: 900px) 100vw, 580px"
-            />
-          </div>
-
-          {/* Text */}
-          <div className="partner-text">
-            <p className="section-label" style={{ marginBottom: '1.4rem' }}>
-              Exklusivt samarbete
-            </p>
-            <h2 className="font-display partner-heading">
-              25% PÅ<br />LACKSTIFT
-            </h2>
-            <p className="partner-desc">
-              Boka rekond hos Fireshine och få en personlig kod som ger&nbsp;
-              <strong>25&nbsp;% rabatt</strong> på hela lackstiftssortimentet
-              hos bilfärg.se.
-            </p>
-            <a
-              href="https://bilfarg.se"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-              style={{ marginTop: '2.5rem', display: 'inline-flex' }}
-            >
-              Besök bilfärg.se →
-            </a>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── OM EMILIA ── */}
-      <section ref={statementRef} className="statement-section" id="om-fireshine">
-        <div className="about-split">
-
-          {/* Foto */}
-          <div className="about-photo-wrap reveal">
-            <Image
-              src="/om-mig.png"
-              alt="Emilia Lindmark, grundare Fireshine Rekond"
-              fill
-              style={{ objectFit: 'cover', objectPosition: 'center top' }}
-              sizes="(max-width: 900px) 100vw, 580px"
-              quality={100}
-              priority
-              unoptimized
-            />
-          </div>
-
-          {/* Text */}
-          <div className="about-text">
-            <p className="section-label reveal" style={{ marginBottom: '1.4rem' }}>
-              Bakom Fireshine
-            </p>
-            <h2 className="font-display about-name reveal reveal-delay-1">
-              EMILIA<br />LINDMARK
-            </h2>
-            <p className="statement-meta reveal reveal-delay-1" style={{ marginBottom: '1.8rem' }}>
-              Grundare &amp; rekondspecialist · Piteå
-            </p>
-            <p className="statement-desc reveal reveal-delay-2">
-              Fireshine Rekond är ett rekondföretag i Piteå med
-              höga krav på resultat. Noggrannhet och ett skarpt
-              öga för detaljer är grunden i varje uppdrag som
-              lämnar verkstaden.
-            </p>
-            <a
-              href="/boka"
-              className="btn-primary reveal reveal-delay-3"
-              style={{ marginTop: '2.5rem', display: 'inline-flex' }}
-            >
-              Boka rekond →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── RESULTAT ── */}
-      <GalleryCarousel />
-
-      {/* ── KONTAKT / BOKA ── */}
-      <section ref={ctaRef} className="cta-final" id="boka">
-        <p className="font-serif cta-ready reveal">Redo?</p>
-        <p className="font-display cta-heading reveal reveal-delay-1">BOKA DIN REKOND</p>
-        <a href="/boka" className="btn-primary reveal reveal-delay-2">Boka tid →</a>
       </section>
     </>
   )

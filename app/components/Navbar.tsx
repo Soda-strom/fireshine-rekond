@@ -5,12 +5,10 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 const links = [
-  { href: '/#tjanster',    label: 'Tjänster'  },
-  { href: '/#lackstift',   label: 'Lackstift erbjudande' },
-  { href: '/#om-fireshine', label: 'Om mig'   },
-  { href: '/#resultat',    label: 'Resultat' },
-  { href: '/#boka',        label: 'Boka'     },
-  { href: '/#kontakt',     label: 'Kontakt'   },
+  { href: '/#tjanster',  label: 'Tjänster'             },
+  { href: '/om',         label: 'Om mig'               },
+  { href: '/lackstift',  label: 'Lackstift erbjudande' },
+  { href: '#kontakt',    label: 'Kontakt'              },
 ]
 
 export default function Navbar() {

@@ -205,9 +205,9 @@ body {
 
 /* ── Statement ── */
 .statement-section {
-  background: #0c0a08;
+  background: #ffffff;
   padding: 11rem 4rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--border);
 }
 
 .statement-inner {
@@ -257,7 +257,7 @@ body {
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   font-weight: 300;
   line-height: 1.85;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-muted);
 }
 
 /* ── Services list ── */
@@ -421,7 +421,7 @@ body {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 400;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: var(--text);
   line-height: 0.9;
   margin-bottom: 1.5rem;
 }
@@ -679,4 +679,149 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { transition: opacity 0.3s ease; transform: none; }
+}
+
+/* ── Sub-page hero (Om mig, Lackstift) ── */
+.page-hero-dark {
+  background: var(--surface);
+  padding: 160px 4rem 7rem;
+  min-height: 46vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.page-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-hero-label {
+  font-family: var(--font-body), 'Outfit', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--fire);
+  margin-bottom: 1.2rem;
+}
+
+.page-hero-title {
+  font-size: clamp(3.8rem, 9vw, 8.5rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .page-hero-dark { padding: 140px 1.6rem 5rem; }
+}
+
+/* ── Service detail pages ── */
+.service-page-hero {
+  background: var(--surface);
+  padding: 160px 4rem 7rem;
+  min-height: 46vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.service-page-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.service-page-num {
+  display: block;
+  font-family: var(--font-body), 'Outfit', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--fire);
+  margin-bottom: 1.2rem;
+}
+
+.service-page-title {
+  font-size: clamp(3.8rem, 9vw, 8.5rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.service-page-sub {
+  font-family: var(--font-body), 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.service-page-content {
+  background: var(--bg);
+  padding: 7rem 4rem;
+}
+
+.service-page-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 7rem;
+  margin-bottom: 5rem;
+}
+
+.service-page-desc {
+  font-size: 1.08rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-top: 0;
+}
+
+.service-page-pricing {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text);
+  margin-top: 0;
+  max-width: 340px;
+}
+
+.service-page-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.service-page-nav-link {
+  font-family: var(--font-body), 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-page-nav-link:hover { color: var(--fire); }
+}
+
+@media (max-width: 900px) {
+  .service-page-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 640px) {
+  .service-page-hero    { padding: 140px 1.6rem 4rem; }
+  .service-page-content { padding: 4rem 1.6rem; }
 }

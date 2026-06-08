@@ -65,78 +65,24 @@ function SocialLink({
 }
 
 const serviceLinks = [
-  'Polering',
-  'Lackskydd',
-  'Invändig Rekond',
-  'Utvändig Rekond',
-  'Helrekond',
+  { label: 'Polering',        slug: 'polering'       },
+  { label: 'Lackskydd',       slug: 'lackskydd'      },
+  { label: 'Invändig Rekond', slug: 'invandig-rekond'},
+  { label: 'Utvändig Rekond', slug: 'utvandig-rekond'},
+  { label: 'Helrekond',       slug: 'helrekond'      },
 ]
 
 const navLinks = [
-  { label: 'Tjänster',             href: '/#tjanster'     },
-  { label: 'Lackstift erbjudande', href: '/#lackstift'    },
-  { label: 'Om mig',               href: '/#om-fireshine' },
-  { label: 'Resultat',             href: '/#resultat'     },
-  { label: 'Boka',                 href: '/#boka'         },
+  { label: 'Tjänster',             href: '/#tjanster'   },
+  { label: 'Om mig',               href: '/om'          },
+  { label: 'Lackstift erbjudande', href: '/lackstift'   },
+  { label: 'Resultat',             href: '/om#resultat' },
+  { label: 'Boka',                 href: '/boka'        },
 ]
 
 export default function Footer() {
   return (
     <>
-      {/* ── CTA STRIP ── */}
-      <section className="cta-dark" style={{ padding: '5.5rem 2rem' }}>
-        <div
-          style={{
-            maxWidth: 1200,
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '2rem',
-            flexWrap: 'wrap',
-          }}
-        >
-          <div>
-            <p
-              style={{
-                fontFamily: "var(--font-body), 'Outfit', sans-serif",
-                fontWeight: 500,
-                fontSize: '0.65rem',
-                letterSpacing: '0.26em',
-                textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.35)',
-                marginBottom: '0.8rem',
-              }}
-            >
-              Redo att boka?
-            </p>
-            <h2
-              className="font-display"
-              style={{
-                fontSize: 'clamp(2.2rem, 5vw, 4rem)',
-                fontWeight: 400,
-                lineHeight: 0.95,
-                color: '#ffffff',
-                letterSpacing: '0.03em',
-              }}
-            >
-              GE FORDONET DEN
-              <br />
-              <span style={{ color: 'var(--fire)' }}>BEHANDLING</span>
-              <br />
-              DET FÖRTJÄNAR
-            </h2>
-          </div>
-          <Link
-            href="/boka"
-            className="btn-primary"
-            style={{ fontSize: '0.76rem', padding: '1.1rem 2.8rem' }}
-          >
-            Boka Tid →
-          </Link>
-        </div>
-      </section>
-
       {/* ── KARTA / KONTAKT ── */}
       <div id="kontakt" style={{ background: '#0c0a08', padding: '5rem 2rem' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -310,10 +256,10 @@ export default function Footer() {
             >
               Tjänster
             </p>
-            {serviceLinks.map(t => (
+            {serviceLinks.map(s => (
               <Link
-                key={t}
-                href="/#tjanster"
+                key={s.slug}
+                href={`/tjanster/${s.slug}`}
                 style={{
                   display: 'block',
                   fontWeight: 300,
@@ -326,7 +272,7 @@ export default function Footer() {
                 onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.32)')}
               >
-                {t}
+                {s.label}
               </Link>
             ))}
           </div>
