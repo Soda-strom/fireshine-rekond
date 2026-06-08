@@ -32,7 +32,7 @@ export const services: Service[] = [
     slug: 'invandig-rekond',
     num: '03',
     title: 'Invändig Rekond',
-    sub: 'Djuprengöring · klädsel · mattor',
+    sub: 'Klädsel · mattor · instrumentpanel',
     description:
       'Djuprengöring av hela interiören — klädsel, mattor, dörrar, tak och instrumentbräda. Fläckar och lukter behandlas effektivt. Fordonet lämnar med en frisk, ren kabin.',
     pricing:
