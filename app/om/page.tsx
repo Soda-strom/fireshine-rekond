@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import GalleryCarousel from '../components/GalleryCarousel'
+import BookdWidget from '../components/BookdWidget'
 
 function useReveal(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
@@ -84,6 +85,9 @@ export default function OmMig() {
 
       {/* ── RESULTAT ── */}
       <GalleryCarousel />
+
+      {/* ── BOKNING ── */}
+      <BookdWidget />
     </>
   )
 }

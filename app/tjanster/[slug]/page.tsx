@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { services } from '../../lib/services'
+import BookdWidget from '../../components/BookdWidget'
 
 export function generateStaticParams() {
   return services.map(s => ({ slug: s.slug }))
@@ -58,6 +59,9 @@ export default async function TjanstPage({
           </div>
 
         </div>
+
+        {/* ── BOKNING ── */}
+        <BookdWidget />
 
         {/* ── PREV / NEXT ── */}
         <div className="service-page-nav">

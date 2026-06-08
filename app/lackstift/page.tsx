@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
+import BookdWidget from '../components/BookdWidget'
 
 function useReveal(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
@@ -76,6 +77,9 @@ export default function LackstiftPage() {
 
         </div>
       </section>
+
+      {/* ── BOKNING ── */}
+      <BookdWidget />
 
       {/* ── BOKA CTA ── */}
       <section ref={ctaRef} className="cta-final" id="boka">

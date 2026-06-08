@@ -683,6 +683,28 @@ body {
   .reveal { transition: opacity 0.3s ease; transform: none; }
 }
 
+/* ── Bookd booking widget ── */
+.bookd-section {
+  background: var(--bg);
+  padding: 4rem 2rem 5rem;
+  border-top: 1px solid var(--border);
+}
+
+.bookd-iframe {
+  display: block;
+  width: 100%;
+  max-width: 860px;
+  height: 750px;
+  margin: 0 auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+@media (max-width: 640px) {
+  .bookd-section { padding: 3rem 1rem 4rem; }
+  .bookd-iframe  { height: 650px; border-radius: 10px; }
+}
+
 /* ── Sub-page hero (Om mig, Lackstift) ── */
 .page-hero-dark {
   background: var(--surface);
