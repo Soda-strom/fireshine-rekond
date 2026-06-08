@@ -42,14 +42,20 @@ export default function GalleryCarousel() {
     return () => window.removeEventListener('resize', update)
   }, [])
 
-  const next = useCallback(() => setIndex(i => i + 1), [])
-  const prev = useCallback(() => setIndex(i => i - 1), [])
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  // Auto-play — always runs, no pause-on-hover
+  const resetAutoPlay = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(() => setIndex(i => i + 1), INTERVAL)
+  }, [])
+
   useEffect(() => {
-    const id = setInterval(next, INTERVAL)
-    return () => clearInterval(id)
-  }, [next])
+    resetAutoPlay()
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current) }
+  }, [resetAutoPlay])
+
+  const handlePrev = useCallback(() => { setIndex(i => i - 1); resetAutoPlay() }, [resetAutoPlay])
+  const handleNext = useCallback(() => { setIndex(i => i + 1); resetAutoPlay() }, [resetAutoPlay])
 
   // Seamless infinite loop
   const handleTransitionEnd = useCallback((e: React.TransitionEvent<HTMLDivElement>) => {
@@ -86,7 +92,7 @@ export default function GalleryCarousel() {
 
       <div className="gallery-track-wrap">
 
-        <button className="gallery-arrow" onClick={prev} aria-label="Föregående">
+        <button className="gallery-arrow" onClick={handlePrev} aria-label="Föregående">
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.4"
               strokeLinecap="round" strokeLinejoin="round" />
@@ -140,7 +146,7 @@ export default function GalleryCarousel() {
           </div>
         </div>
 
-        <button className="gallery-arrow" onClick={next} aria-label="Nästa">
+        <button className="gallery-arrow" onClick={handleNext} aria-label="Nästa">
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="1.4"
               strokeLinecap="round" strokeLinejoin="round" />
