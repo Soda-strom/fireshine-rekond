@@ -14,7 +14,7 @@ export const services: Service[] = [
     title: 'Polering',
     sub: 'Maskinpolering · repor · lack',
     description:
-      'Maskinpolering som tar bort repor, virvelmarken och oxidation ur lacken. Behandlingen anpassas efter lackens skick och ger en djup, jämn glans. Varje uppdrag börjar med en noggrann bedömning av lackytan.',
+      'Maskinpolering som tar bort repor, virvelmarken och oxidation ur lacken. Behandlingen anpassas efter lackens skick och ger en djup, jämn glans. Varje uppdrag inleds med en noggrann utvändig tvätt innan poleringen påbörjas.',
     pricing:
       'Priset beror på fordonets storlek, lackskick och önskat resultat. Du väljer vilket fordon du har när du bokar, och priset sätts utifrån det.',
   },
