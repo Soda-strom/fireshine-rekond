@@ -56,7 +56,7 @@ export default function Navbar() {
           <span
             style={{
               fontFamily: "var(--font-display), 'Bebas Neue', sans-serif",
-              fontSize: '1.75rem',
+              fontSize: '2.2rem',
               fontWeight: 400,
               letterSpacing: '0.06em',
               color: onHero ? '#ffffff' : 'var(--text)',
@@ -69,7 +69,7 @@ export default function Navbar() {
           <span
             style={{
               fontFamily: "var(--font-body), 'Outfit', sans-serif",
-              fontSize: '0.56rem',
+              fontSize: '0.65rem',
               fontWeight: 500,
               letterSpacing: '0.24em',
               textTransform: 'uppercase',
