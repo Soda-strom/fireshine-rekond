@@ -18,7 +18,7 @@ export const galleryImages = [
   { src: '/resultat/audi-cab.jpg',     alt: 'Nyrekondad Audi cabriolet',         label: 'Audi Cabriolet'  },
   { src: '/resultat/vit-ram.jpg',      alt: 'Nyrekondad vit RAM 1500',           label: 'RAM 1500'        },
   { src: '/resultat/invandig-6.jpg',   alt: 'Invändig rekond — Volvo',           label: 'Invändig Rekond' },
-  { src: '/resultat/lastbil.jpg',      alt: 'Nyrekondad lastbil',                label: 'Lastbil'         },
+  { src: '/resultat/Volvo FH.jpg',      alt: 'Nyrekondad Volvo FH',              label: 'Volvo FH'        },
   { src: '/resultat/suzuki.jpg',       alt: 'Nyrekondad Suzuki Hayabusa',        label: 'Suzuki Hayabusa' },
   { src: '/resultat/ram.jpg',          alt: 'Nyrekondad RAM',                    label: 'RAM'             },
 ]
