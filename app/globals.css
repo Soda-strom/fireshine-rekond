@@ -683,26 +683,59 @@ body {
   .reveal { transition: opacity 0.3s ease; transform: none; }
 }
 
-/* ── Bookd booking widget ── */
-.bookd-section {
-  background: var(--bg);
-  padding: 4rem 2rem 5rem;
-  border-top: 1px solid var(--border);
+/* ── Booking modal ── */
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.bookd-iframe {
+.booking-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 880px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.booking-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 10;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.08);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 160ms;
+}
+.booking-close:hover { background: rgba(0, 0, 0, 0.16); }
+
+.booking-iframe {
   display: block;
   width: 100%;
-  max-width: 860px;
-  height: 750px;
-  margin: 0 auto;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
+  height: min(750px, 85vh);
+  border: none;
 }
 
 @media (max-width: 640px) {
-  .bookd-section { padding: 3rem 1rem 4rem; }
-  .bookd-iframe  { height: 650px; border-radius: 10px; }
+  .booking-modal  { border-radius: 14px; }
+  .booking-iframe { height: 80vh; }
 }
 
 /* ── Sub-page hero (Om mig, Lackstift) ── */

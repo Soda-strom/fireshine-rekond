@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
-import BookdWidget from '../components/BookdWidget'
+import BokaButton from '../components/BokaButton'
 
 function useReveal(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
@@ -78,14 +78,11 @@ export default function LackstiftPage() {
         </div>
       </section>
 
-      {/* ── BOKNING ── */}
-      <BookdWidget />
-
       {/* ── BOKA CTA ── */}
       <section ref={ctaRef} className="cta-final" id="boka">
         <p className="font-serif cta-ready reveal">Redo?</p>
         <p className="font-display cta-heading reveal reveal-delay-1">BOKA DIN REKOND</p>
-        <a href="/boka" className="btn-primary reveal reveal-delay-2">Boka tid →</a>
+        <BokaButton className="btn-primary reveal reveal-delay-2">Boka tid →</BokaButton>
       </section>
     </>
   )

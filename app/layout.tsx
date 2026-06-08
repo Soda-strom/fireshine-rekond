@@ -3,6 +3,7 @@ import { Bebas_Neue, Outfit, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { BookingProvider } from './components/BookingContext'
 
 const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
@@ -38,9 +39,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="sv" className={`${bebasNeue.variable} ${outfit.variable} ${cormorant.variable}`}>
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <BookingProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </BookingProvider>
       </body>
     </html>
   )

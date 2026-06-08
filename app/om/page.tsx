@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import GalleryCarousel from '../components/GalleryCarousel'
-import BookdWidget from '../components/BookdWidget'
+import BokaButton from '../components/BokaButton'
 
 function useReveal(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
@@ -71,13 +71,12 @@ export default function OmMig() {
               öga för detaljer är grunden i varje uppdrag som
               lämnar verkstaden.
             </p>
-            <a
-              href="/boka"
+            <BokaButton
               className="btn-primary reveal reveal-delay-3"
               style={{ marginTop: '2.5rem', display: 'inline-flex' }}
             >
               Boka rekond →
-            </a>
+            </BokaButton>
           </div>
 
         </div>
@@ -85,9 +84,6 @@ export default function OmMig() {
 
       {/* ── RESULTAT ── */}
       <GalleryCarousel />
-
-      {/* ── BOKNING ── */}
-      <BookdWidget />
     </>
   )
 }

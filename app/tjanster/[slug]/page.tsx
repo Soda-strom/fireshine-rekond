@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { services } from '../../lib/services'
-import BookdWidget from '../../components/BookdWidget'
+import BokaButton from '../../components/BokaButton'
 
 export function generateStaticParams() {
   return services.map(s => ({ slug: s.slug }))
@@ -49,19 +49,15 @@ export default async function TjanstPage({
               Pris
             </p>
             <p className="service-page-pricing">{service.pricing}</p>
-            <Link
-              href="/boka"
+            <BokaButton
               className="btn-primary"
               style={{ display: 'inline-flex', marginTop: '2.2rem' }}
             >
               Boka tid →
-            </Link>
+            </BokaButton>
           </div>
 
         </div>
-
-        {/* ── BOKNING ── */}
-        <BookdWidget />
 
         {/* ── PREV / NEXT ── */}
         <div className="service-page-nav">
