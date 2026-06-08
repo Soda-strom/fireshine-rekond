@@ -113,7 +113,7 @@ export default function Footer() {
             {/* Karta */}
             <div className="map-wrap">
               <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=21.45%2C65.30%2C21.51%2C65.34&layer=mapnik&marker=65.3173%2C21.4791"
+                src="https://maps.google.com/maps?q=Piteå+centrum,+Piteå,+Sverige&output=embed&z=14"
                 width="100%"
                 height="320"
                 style={{ border: 0, display: 'block' }}
