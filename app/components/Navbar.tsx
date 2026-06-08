@@ -76,7 +76,7 @@ export default function Navbar() {
               transition: 'color 0.35s ease',
             }}
           >
-            Rekond
+            Recond
           </span>
         </Link>
 

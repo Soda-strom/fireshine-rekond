@@ -214,7 +214,7 @@ export default function Footer() {
                   marginTop: '0.15rem',
                 }}
               >
-                Rekond
+                Recond
               </span>
             </div>
             <p
