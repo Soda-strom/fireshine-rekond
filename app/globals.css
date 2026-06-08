@@ -342,7 +342,7 @@ body {
 
 .service-line-sub {
   font-family: var(--font-body), 'Outfit', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: 300;
   letter-spacing: 0.05em;
   color: var(--text-muted);
