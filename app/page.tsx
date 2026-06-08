@@ -124,7 +124,7 @@ export default function Home() {
             <p className="font-display hero-tagline">
               PROFESSIONELL<br />REKOND
             </p>
-            <BokaButton className="hero-mobile-cta">
+            <BokaButton className="btn-primary hero-mobile-cta">
               Boka rekond →
             </BokaButton>
           </div>
