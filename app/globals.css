@@ -557,8 +557,10 @@ body {
   .gallery-arrow {
     width: 36px;
     height: 36px;
-    margin: 0 0.75rem;
+    margin: 0 0.5rem;
   }
+  .gallery-track-wrap { padding: 0 0 2rem; }
+  .gallery-slide      { padding: 0 3px; }
 }
 
 .gallery-slide {

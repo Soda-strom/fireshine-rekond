@@ -32,11 +32,11 @@ const DURATION = 1400
 export default function GalleryCarousel() {
   const [index, setIndex]       = useState(N)
   const [animated, setAnimated] = useState(true)
-  const [visible, setVisible]   = useState(3)
+  const [isMobile, setIsMobile] = useState(false)
   const rafRef = useRef<number | null>(null)
 
   useEffect(() => {
-    const update = () => setVisible(window.innerWidth < 640 ? 1 : 3)
+    const update = () => setIsMobile(window.innerWidth < 640)
     update()
     window.addEventListener('resize', update, { passive: true })
     return () => window.removeEventListener('resize', update)
@@ -79,8 +79,10 @@ export default function GalleryCarousel() {
     return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
   }, [animated])
 
-  const offset    = (index * 100) / visible
-  const centerIdx = visible === 3 ? index + 1 : index
+  // Mobile: 72 % slide, 14 % peek on each side. Desktop: 3 full slides.
+  const slideW    = isMobile ? 72 : 100 / 3
+  const offset    = isMobile ? index * 72 - 14 : (index * 100) / 3
+  const centerIdx = isMobile ? index : index + 1
   const duration  = `${animated ? DURATION : 0}ms`
 
   return (
@@ -117,7 +119,7 @@ export default function GalleryCarousel() {
                   key={i}
                   className="gallery-slide"
                   style={{
-                    flex: `0 0 ${100 / visible}%`,
+                    flex: `0 0 ${slideW}%`,
                     transform: isCenter ? 'scale(1)' : 'scale(0.8)',
                     opacity: isCenter ? 1 : 0.85,
                     transition: `transform ${duration} ${EASING}, opacity ${duration} ease`,
