@@ -62,7 +62,7 @@ export default function LackstiftPage() {
             <p className="partner-desc">
               Boka rekond hos Fireshine och få en personlig kod som ger&nbsp;
               <strong>25&nbsp;% rabatt</strong> på hela lackstiftssortimentet
-              hos bilfärg.se.
+              hos bilfärg.se — använd bara koden i kassan.
             </p>
             <a
               href="https://bilfarg.se"
