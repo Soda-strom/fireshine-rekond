@@ -12,7 +12,7 @@ export const services: Service[] = [
     slug: 'polering',
     num: '01',
     title: 'Polering',
-    sub: 'Maskinpolering · repor · lack',
+    sub: 'Utvändig tvätt · polering',
     description:
       'Maskinpolering som tar bort repor, virvelmarken och oxidation ur lacken. Behandlingen anpassas efter lackens skick och ger en djup, jämn glans. Varje uppdrag inleds med en noggrann utvändig tvätt innan poleringen påbörjas.',
     pricing:
