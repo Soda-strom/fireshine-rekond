@@ -118,7 +118,7 @@ export default function Footer() {
                 height="320"
                 style={{ border: 0, display: 'block' }}
                 loading="lazy"
-                title="Fireshine Rekond — Piteå"
+                title="Fireshine Recond — Piteå"
               />
             </div>
 
@@ -380,7 +380,7 @@ export default function Footer() {
               letterSpacing: '0.04em',
             }}
           >
-            © {new Date().getFullYear()} Fireshine Rekond. Alla rättigheter förbehållna.
+            © {new Date().getFullYear()} Fireshine Recond. Alla rättigheter förbehållna.
           </p>
           <span
             className="font-display"
@@ -391,7 +391,7 @@ export default function Footer() {
               opacity: 0.65,
             }}
           >
-            FIRESHINE ✦ REKOND
+            FIRESHINE ✦ RECOND
           </span>
         </div>
       </footer>

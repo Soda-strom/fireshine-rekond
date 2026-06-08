@@ -27,7 +27,7 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: 'Fireshine Rekond — Professionell Rekond för Alla Fordon',
+  title: 'Fireshine Recond — Professionell Rekond för Alla Fordon',
   description:
     'Professionell rekond och polering för alla typer av fordon. Specialiserade på stora och tunga fordon — lastbilar, bussar och transportfordon.',
   keywords:

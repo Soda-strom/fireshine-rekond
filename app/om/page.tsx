@@ -44,7 +44,7 @@ export default function OmMig() {
           <div className="about-photo-wrap reveal">
             <Image
               src="/om-mig.png"
-              alt="Emilia Lindmark, grundare Fireshine Rekond"
+              alt="Emilia Lindmark, grundare Fireshine Recond"
               fill
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
               sizes="(max-width: 900px) 100vw, 580px"
@@ -65,7 +65,7 @@ export default function OmMig() {
               Grundare &amp; rekondspecialist · Piteå
             </p>
             <p className="statement-desc reveal reveal-delay-2">
-              Fireshine Rekond är ett rekondföretag i Piteå med
+              Fireshine Recond är ett rekondföretag i Piteå med
               höga krav på resultat. Noggrannhet och ett skarpt
               öga för detaljer är grunden i varje uppdrag som
               lämnar verkstaden.
