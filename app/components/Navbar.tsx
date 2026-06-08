@@ -52,7 +52,7 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '0.55rem', flexShrink: 0 }}>
+        <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '0.55rem', flexShrink: 0, marginLeft: '-0.5rem' }}>
           <span
             style={{
               fontFamily: "var(--font-display), 'Bebas Neue', sans-serif",
